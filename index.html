@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sithara Airlines</title>
+  <style>
+    body {
+      font-family: 'Poppins', 'Gill Sans', 'Trebuchet MS', sans-serif;
+      font-style: italic;
+      margin: 0;
+      padding: 0;
+      color: #0a0a23;
+      background: radial-gradient(ellipse at bottom, #001233 0%, #000814 100%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    /* Animated stars */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      animation: moveStars 60s linear infinite;
+      opacity: 0.25;
+      z-index: -1;
+    }
+
+    @keyframes moveStars {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-500px, -500px); }
+    }
+
+    header {
+      background: linear-gradient(90deg, #001f4d, #003f87);
+      color: #ffffff;
+      padding: 30px 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 8px rgba(255,255,255,0.4);
+    }
+
+    .tagline {
+      font-style: italic;
+      color: #b3d9ff;
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+
+    section {
+      background: rgba(255,255,255,0.95);
+      margin: 30px auto;
+      padding: 25px 40px;
+      width: 85%;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      backdrop-filter: blur(4px);
+    }
+
+    h2 {
+      color: #002b5c;
+      border-left: 5px solid #003f87;
+      padding-left: 10px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: #004080;
+      font-size: 1.3em;
+      margin-top: 20px;
+    }
+
+    ul {
+      columns: 2;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+      padding-left: 15px;
+      position: relative;
+    }
+
+    li::before {
+      content: "✦";
+      color: #004080;
+      position: absolute;
+      left: 0;
+    }
+
+    img {
+      border-radius: 15px;
+      margin-top: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .city {
+      cursor: pointer;
+      text-decoration: underline dotted #003f87;
+      color: #001a4d;
+      transition: color 0.2s ease;
+    }
+
+    .city:hover {
+      color: #004fff;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #001f4d, #003f87);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+      box-shadow: 0 -3px 8px rgba(0,0,0,0.4);
+    }
+
+    .popup {
+      position: absolute;
+      background: #fffbe7;
+      color: #202020;
+      border: 1px solid #444;
+      padding: 8px 12px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+      font-size: 14px;
+      pointer-events: none;
+      display: none;
+      z-index: 1000;
+    }
+
+    /* Glowing moon in header */
+    header::after {
+      content: "🌙";
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      font-size: 2em;
+      opacity: 0.8;
+      animation: moonGlow 3s ease-in-out infinite alternate;
+
+
+    }
+
+    @keyframes moonGlow {
+      from { text-shadow: 0 0 10px #ffeeaa, 0 0 20px #fff6cc; }
+      to { text-shadow: 0 0 20px #fff6cc, 0 0 40px #fff6cc; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sithara Airlines</h1>
+    <div class="tagline">Fly with passion, fly with stars ✨</div>
+  </header>
+
+  <section>
+    <h2>About Us</h2>
+    <p>Sithara Airlines, a dynamic <strong>low to medium-cost carrier based in Bengaluru</strong>, is redefining air travel with a perfect blend of <strong>comfort and affordability</strong>. We connect <strong>India to global destinations</strong>, making international and domestic travel seamless and stylish. At Sithara Airlines, we believe flying should be more than just reaching your destination—it should be a <strong>comfortable, budget-friendly experience</strong> you can count on. Whether you’re traveling for business or leisure, <strong>our versatile services and customer-first approach</strong> make us your ideal travel partner.</p>
+  </section>
+
+  <section>
+    <h2>Our Cabin</h2>
+    <p>We provide the advanced <strong>World class modern cabin with soft and reclinable comfortable seats</strong> along with the <strong>moody lightings</strong> in Economy and Premium Economy configuration.</p>
+    <img src="cabin.jpg" alt="Sithara Airlines cabin" style="width: 500px;height: 500px;">
+  </section>
+
+  <section>
+    <h2>Our Destinations</h2>
+    <ul>
+      <li>African Continent:
+        <span class="city" data-flight="STR4787">Addis Ababa</span>,
+        <span class="city" data-flight="STR4784">Entebbe</span>,
+        <span class="city" data-flight="STR4781">Johannesburg</span>,
+        <span class="city" data-flight="STR4789">Seychelles</span>
+      </li>
+      <li>Australia:
+        <span class="city" data-flight="STR511">Sydney</span>,
+        <span class="city" data-flight="STR512">Melbourne</span>,
+        <span class="city" data-flight="STR513">Perth</span>
+      </li>
+      <li>Bhutan:
+        <span class="city" data-flight="STR211">Paro</span>
+      </li>
+      <li>Canada:
+        <span class="city" data-flight="STR391">Toronto</span>,
+        <span class="city" data-flight="STR392">Vancouver</span>,
+        <span class="city" data-flight="STR393">Montreal</span>
+      </li>
+      <li>China:
+        <span class="city" data-flight="STR111">Beijing Capital</span>,
+        <span class="city" data-flight="STR112">Guangzhou</span>,
+        <span class="city" data-flight="STR113">Shanghai</span>
+      </li>
+      <li>France:
+        <span class="city" data-flight="STR012">Paris</span>
+      </li>
+      <li>Germany:
+        <span class="city" data-flight="STR7847">Dusseldorf</span>,
+        <span class="city" data-flight="STR7849">Munich</span>
+      </li>
+      <li>Hong Kong:
+        <span class="city" data-flight="STR7847">Hong Kong</span>
+      </li>
+      <li>India:
+        <span class="city" data-flight="STR_Multiple">Bengaluru (HUB)</span>,
+        <span class="city" data-flight="STR_Multiple">Delhi</span>,
+        <span class="city" data-flight="STR_Multiple">Navi Mumbai</span>
+      </li>
+      <li>Indonesia:
+        <span class="city" data-flight="STR211">Jakarta</span>,
+        <span class="city" data-flight="STR212">Denpasar (Bali)</span>
+      </li>
+      <li>Japan:
+        <span class="city" data-flight="STR411">Tokyo Narita</span>,
+        <span class="city" data-flight="STR412">Osaka Kansai</span>
+      </li>
+      <li>New Zealand:
+        <span class="city" data-flight="STR014">Auckland</span>,
+        <span class="city" data-flight="STR017">Christchurch</span>
+      </li>
+      <li>Malaysia:
+        <span class="city" data-flight="STR365">Kuala Lumpur</span>
+      </li>
+      <li>Middle East:
+        <span class="city" data-flight="STR711">Bahrain</span>,
+        <span class="city" data-flight="STR712">Doha</span>,
+        <span class="city" data-flight="STR713">Dubai</span>,
+        <span class="city" data-flight="STR432">Jeddah</span>,
+        <span class="city" data-flight="STR433">Kuwait City</span>,
+        <span class="city" data-flight="STR435">Medinah</span>,
+        <span class="city" data-flight="STR311">Muscat</span>,
+        <span class="city" data-flight="STR312">Riyadh</span>
+      </li>
+      <li>Singapore:
+        <span class="city" data-flight="STR334">Singapore Changi</span>
+      </li>
+      <li>South Korea:
+        <span class="city" data-flight="STR571">Seoul Incheon</span>,
+        <span class="city" data-flight="STR574">Busan</span>
+      </li>
+      <li>Thailand:
+        <span class="city" data-flight="STR554">Bangkok Suvarnabhumi</span>,
+        <span class="city" data-flight="STR558">Phuket</span>
+      </li>
+      <li>United Kingdom:
+        <span class="city" data-flight="STR477R">Birmingham</span>,
+        <span class="city" data-flight="STR475">London Heathrow</span>,
+        <span class="city" data-flight="STR477">Manchester</span>
+      </li>
+      <li>United States:
+        <span class="city" data-flight="STR874">Honolulu (Hawaii)</span>,
+        <span class="city" data-flight="STR875">New York JFK</span>,
+        <span class="city" data-flight="STR875">San Francisco</span>
+      </li>
+      <li>Vietnam:
+        <span class="city" data-flight="STR6569">Hanoi</span>,
+        <span class="city" data-flight="STR6574">Ho-Chi-Minh City</span>,
+        <span class="city" data-flight="STR6564">Nha Trang</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Our Codeshare Partners</h2>
+    <p>To expand your travel possibilities, Sithara Airlines proudly partners with leading global carriers through codeshare agreements:</p>
+    <div class="partners">
+      <div class="partner">Air Asia (Malaysia)</div>
+      <div class="partner">Air France-KLM</div>
+      <div class="partner">American Airlines</div>
+      <div class="partner">Cathay Pacific</div>
+      <div class="partner">China Eastern</div>
+      <div class="partner">Delta Air Lines</div>
+      <div class="partner">Etihad Airways</div>
+      <div class="partner">Jetstar</div>
+      <div class="partner">Lion Air</div>
+      <div class="partner">Riyadh Air</div>
+      <div class="partner">Singapore Airlines</div>
+      <div class="partner">Virgin Atlantic</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Fleet</h2>
+    <div>
+      <h3>Boeing 777-200LR:</h3>
+      <img src="777.jpg" alt="Sithara Airlines Aircraft" style="width: 500px;height:500px;">
+      <p>World’s longest-range commercial airliner (up to ~15,800 km / 8,555 nm), Ideal for ultra-long-haul nonstop flights, Powerful GE90-110B1/115B engines, Spacious twin-aisle cabin with high passenger comfort, Advanced wing design for fuel efficiency.</p>
+    </div>
+    <div>
+      <h3>Airbus A350-900XWB:</h3>
+      <img src="sithara.jpg" alt="Sithara Airlines Aircraft" style="width: 500px;height:500px;">
+      <p>Ultra-long-haul range (~15,000 km / 8,100 nm) with outstanding fuel efficiency, Carbon-fiber composite fuselage for lighter weight and better aerodynamics, Rolls-Royce Trent XWB engines – the world’s most efficient large aero engines, Extra-wide cabin with higher humidity and lower cabin altitude for comfort.</p>
+    </div>
+    <div>
+      <h3>Airbus A330-900 Neo:</h3>
+      <img src="a330.jpg" alt="Sithara Airlines Aircraft" style="width: 500px;height:500px;">
+      <p>Latest-generation engines for reduced fuel burn (Rolls-Royce Trent 7000) Quiet, modern cabin with Airspace by Airbus interiors, Up to ~13,334 km / 7,200 nm range, Widebody comfort with excellent economics, LED mood lighting for passenger comfort.</p>
+    </div>
+    <div>
+      <h3>Airbus A321-251NX (XLR):</h3>
+      <img src="a321.jpg" alt="Sithara Airlines Aircraft" style="width: 500px;height:500px;">
+      <p>Longest-range narrowbody aircraft (~8,700 km / 4,700 nm). Perfect for thin long-haul routes without widebody costs. Modern, fuel-efficient CFMI Leap engines, single-aisle comfort with large overhead bins, advanced wing design and quiet cabin.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Sithara Airlines — Fly with passion, fly with stars ✨</p>
+  </footer>
+
+  <div id="popup" class="popup"></div>
+
+  <script>
+    const popup = document.getElementById('popup');
+    document.querySelectorAll('.city').forEach(city => {
+      city.addEventListener('mouseenter', function(e) {
+        popup.textContent = 'Flight Number: ' + city.dataset.flight;
+        popup.style.display = 'block';
+      });
+      city.addEventListener('mousemove', function(e) {
+        popup.style.left = (e.pageX + 15) + 'px';
+        popup.style.top = (e.pageY + 10) + 'px';
+      });
+      city.addEventListener('mouseleave', function() {
+        popup.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
